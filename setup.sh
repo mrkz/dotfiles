@@ -1,6 +1,6 @@
 #!/bin/sh
 
-managed=(shrc ssh tmux vim)
+managed=(shrc bash tmux vim)
 
 command -v stow >/dev/null 2>&1 || { echo >&2 "Install stow to continue"; exit 1; }
 

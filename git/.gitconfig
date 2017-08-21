@@ -1,0 +1,24 @@
+# This is Git's per-user configuration file.
+[user]
+        name = Simental Magana, Marcos
+        email = mrkzmrkz@gmail.com
+
+#[sendemail]
+#        confirm = always
+#        smtpserver = smtp.example.com
+#        suppresscc = all
+
+[push]
+        default = simple
+
+[alias]
+        undo-commit = reset --soft HEAD^
+        full-log = log --stat --color -p
+        short-log = "log --pretty=format:\"%h - %an, %ar : %s\""
+        co = checkout
+
+[help]
+        autocorrect = 3
+
+#[url "git@gitlab.com:"]
+#        insteadOf = https://gitlab.com

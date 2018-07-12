@@ -42,6 +42,9 @@ execute pathogen#infect()
 
 " nerdtree
 " https://github.com/scrooloose/nerdtree
+map <F9> :NERDTreeToggle<CR>
+" close vim if the only window left is NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " vim-markdown
 " https://github.com/plasticboy/vim-markdown

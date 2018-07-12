@@ -8,3 +8,6 @@ for element in ${managed[@]}; do
     stow -t $HOME ${element}
 done
 unset element
+
+# create backup folder for vim
+mkdir -p ~/.vim/bkp

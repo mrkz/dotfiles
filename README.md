@@ -17,7 +17,7 @@ executing the script as they may touch sensible files
 $ ./setup.sh
 ```
 
-## Licence
+## License
 The script and dotfiles of my own are licensed under the MIT license. However,
 other repositories and scripts included (e.g: vim plugins, git-prompt.sh, etc)
 may have their own licences. Please check them carefully.

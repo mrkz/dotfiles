@@ -53,15 +53,16 @@ set directory=~/.vim/.bkp//
 let &colorcolumn=join(range(81,999),",")
 highlight ColorColumn ctermbg=235 guibg=#4e6582
 
-" show trailing whitespaces in ugly red
-highlight ExtraWhitespace ctermbg=red guibg=red
-match ExtraWhitespace /\s\+$/
-
 " set color theme (REQUIRES molokai SCHEME)
 " find it at https://github.com/tomasr/molokai
 let g:molokai_original = 1
 let g:rehash256 = 1
-colorscheme molokai
+silent! colorscheme molokai " silent ! ignores error if not installed
+
+" show trailing whitespaces in ugly red
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+
 
 """"
 """" Plugins setup

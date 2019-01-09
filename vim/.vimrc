@@ -1,3 +1,33 @@
+" Plugins will be downloaded under the specified directory.
+call plug#begin('~/.vim/plugged')
+
+""""
+""""  Declare the list of plugins.
+""""
+
+""""  UI/Theme/Colors related
+Plug 'tomasr/molokai'
+
+
+"""" Plugins
+""""    navigation (code/tree)
+Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTree'] }
+Plug 'majutsushi/tagbar', { 'on': ['TagbarToggle'] }
+""""    markdown
+Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
+
+""""    golang
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+
+""""    git stuff
+Plug 'airblade/vim-gitgutter'
+""""    IDE-like behavior
+Plug 'Shougo/neocomplete.vim'
+Plug 'vim-syntastic/syntastic'
+
+" List ends here. Plugins become visible to Vim after this call.
+call plug#end()
+
 set nocompatible
 set expandtab
 set softtabstop=4
@@ -8,8 +38,11 @@ set number
 filetype plugin indent on
 
 " get backups/swapfiles out of the way
-set backupdir=~/.vim/bkp//
-set directory=~/.vim/bkp//
+if !isdirectory($HOME . "/.vim/.bkp")
+    call mkdir($HOME . "/.vim/.bkp", "p")
+endif
+set backupdir=~/.vim/.bkp//
+set directory=~/.vim/.bkp//
 
 
 """"
@@ -30,15 +63,9 @@ let g:molokai_original = 1
 let g:rehash256 = 1
 colorscheme molokai
 
-
 """"
 """" Plugins setup
 """"
-
-" run path manipulation
-" vim-pathogen is used, more details:
-" https://github.com/tpope/vim-pathogen
-execute pathogen#infect()
 
 " nerdtree
 " https://github.com/scrooloose/nerdtree
@@ -113,3 +140,6 @@ let g:tagbar_type_go = {
     \ 'ctagsargs' : '-sort -silent'
 \ }
 
+" vim-gitgutter
+" https://github.com/airblade/vim-gitgutter
+let g:gitgutter_max_signs = 1000 " disable after 1000 signs to be shown

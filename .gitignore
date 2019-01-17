@@ -1,3 +1,4 @@
 *.swp
 .proxies
 *~
+vim/.vim/plugged

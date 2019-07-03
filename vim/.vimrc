@@ -24,6 +24,13 @@ Plug 'airblade/vim-gitgutter'
 """"    IDE-like behavior
 Plug 'Shougo/neocomplete.vim'
 Plug 'vim-syntastic/syntastic'
+""""    snippets support
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+
+"""" Make vim hardcore to use :^)
+Plug 'takac/vim-hardtime'
+
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
@@ -44,6 +51,10 @@ endif
 set backupdir=~/.vim/.bkp//
 set directory=~/.vim/.bkp//
 
+" set $PATH to use $GOBIN (if available)
+if isdirectory($HOME . "/go/bin")
+    let $PATH = $HOME . "/go/bin:" . $PATH
+endif
 
 """"
 """" Colors setup
@@ -102,7 +113,8 @@ let g:syntastic_mode_map = { 'passive_filetypes': ['python'] }
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_c_remove_include_errors = 1
 
 " jedi
 " https://github.com/davidhalter/jedi-vim
@@ -144,3 +156,11 @@ let g:tagbar_type_go = {
 " vim-gitgutter
 " https://github.com/airblade/vim-gitgutter
 let g:gitgutter_max_signs = 1000 " disable after 1000 signs to be shown
+
+" ultisnips (snippets)
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+" vim-hardtime (don't repeat jjjjjj, kkkkkk)
+let g:hardtime_default_on = 1

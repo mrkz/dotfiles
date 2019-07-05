@@ -44,6 +44,19 @@ set ruler
 set number
 filetype plugin indent on
 
+"""" Line number setup
+""""    set line number hybrid
+set number relativenumber
+""""    configure the hybrid for
+""""      * absolute number on insert mode
+""""      * relative for command mode / buffer not focused
+"""" snippet stolen from https://jeffkreeftmeijer.com/vim-number/
+augroup numbertoggle
+    autocmd!
+    autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+    autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+augroup END
+
 " get backups/swapfiles out of the way
 if !isdirectory($HOME . "/.vim/.bkp")
     call mkdir($HOME . "/.vim/.bkp", "p")

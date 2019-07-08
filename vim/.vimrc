@@ -94,7 +94,7 @@ match ExtraWhitespace /\s\+$/
 
 " nerdtree
 " https://github.com/scrooloose/nerdtree
-map <F9> :NERDTreeToggle<CR>
+map <F8> :NERDTreeToggle<CR>
 " close vim if the only window left is NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
@@ -137,7 +137,7 @@ let g:jedi#show_call_signatures = 0
 
 " tagbar settings
 " https://github.com/majutsushi/tagbar
-nmap <F8> :TagbarToggle<CR>
+nmap <F9> :TagbarToggle<CR>
 let g:tagbar_type_go = {
     \ 'ctagstype' : 'go',
     \ 'kinds'     : [

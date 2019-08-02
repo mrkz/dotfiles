@@ -12,7 +12,7 @@ ZSH_THEME=terminalparty
 
 if [ -d ${OH_MY_ZSH_REPO} ]; then
     export ZSH=${OH_MY_ZSH_REPO}
-    plugins=( git )
+    plugins=( git vi-mode )
     . ${ZSH}/oh-my-zsh.sh
 fi
 

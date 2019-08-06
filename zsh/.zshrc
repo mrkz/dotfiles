@@ -27,7 +27,7 @@ if [ -d ${OH_MY_ZSH_REPO} ]; then
             export MODE_INDICATOR="<"
             # make sure RPS1 shows vi-mode
             if [[ ! ${RPS1} == *'$(vi_mode_prompt_info)'* ]] ; then
-                export RPS1="'$(vi_mode_prompt_info)' ${RPS1}"
+                export RPS1="\$(vi_mode_prompt_info) ${RPS1}"
             fi
         fi
     done

@@ -24,10 +24,9 @@ if [ -d ${OH_MY_ZSH_REPO} ]; then
             # make vi mode transition faster (hundredths of a second)
             export KEYTIMEOUT=1
             # re-define MODE_INDICATOR variable
-            export MODE_INDICATOR="‹"
+            export MODE_INDICATOR="<"
             # make sure RPS1 shows vi-mode
             if [[ ! ${RPS1} == *'$(vi_mode_prompt_info)'* ]] ; then
-                echo "exporting vi_mode_prompt_info"
                 export RPS1="'$(vi_mode_prompt_info)' ${RPS1}"
             fi
         fi

@@ -7,7 +7,6 @@ export TERM=xterm-256color
 if [ -f /usr/bin/go ]; then
     export GOPATH=${HOME}/go
     export GOBIN=$GOPATH/bin
-    export CDPATH="./:$GOPATH/src"
     export PATH="$GOBIN:$PATH"
 fi
 

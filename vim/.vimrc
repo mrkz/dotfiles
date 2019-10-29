@@ -42,6 +42,7 @@ set shiftwidth=4
 set background=dark
 set ruler
 set number
+set cursorline
 filetype plugin indent on
 
 """" Line number setup

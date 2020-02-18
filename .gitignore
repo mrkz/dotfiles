@@ -2,3 +2,5 @@
 .proxies
 *~
 vim/.vim/plugged
+# CLR related
+shrc/.shrc/clr.sh

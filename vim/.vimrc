@@ -28,9 +28,6 @@ Plug 'vim-syntastic/syntastic'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
-"""" Make vim hardcore to use :^)
-"Plug 'takac/vim-hardtime'
-
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
@@ -175,6 +172,3 @@ let g:gitgutter_max_signs = 1000 " disable after 1000 signs to be shown
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-
-" vim-hardtime (don't repeat jjjjjj, kkkkkk)
-let g:hardtime_default_on = 1

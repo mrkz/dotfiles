@@ -29,7 +29,7 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
 """" Make vim hardcore to use :^)
-Plug 'takac/vim-hardtime'
+"Plug 'takac/vim-hardtime'
 
 
 " List ends here. Plugins become visible to Vim after this call.

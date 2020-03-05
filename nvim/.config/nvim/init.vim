@@ -21,6 +21,8 @@ Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 
 """"    git stuff
 Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+
 """"    IDE-like behavior
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'vim-syntastic/syntastic'
@@ -28,6 +30,8 @@ Plug 'vim-syntastic/syntastic'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
+""""    code navigation plugins
+Plug 'jsfaint/gen_tags.vim'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
@@ -173,3 +177,7 @@ let g:gitgutter_max_signs = 1000 " disable after 1000 signs to be shown
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+" gen_tags.vim
+" https://github.com/jsfaint/gen_tags.vim
+let g:gen_tags#gtags_default_map = 1

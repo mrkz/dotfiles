@@ -1,4 +1,4 @@
-OH_MY_ZSH_REPO="${HOME}/git/oh-my-zsh"
+OH_MY_ZSH_REPO="${HOME}/git/ohmyzsh"
 
 # load global shell setup
 if [ -d ${HOME}/.shrc/ ]; then

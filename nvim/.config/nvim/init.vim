@@ -118,6 +118,8 @@ let g:go_highlight_fields = 1
 let g:go_highlight_types = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
+"don't complain on older nvim installs
+let g:go_version_warning = 0
 
 " syntastic
 " https://github.com/vim-syntastic/syntastic

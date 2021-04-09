@@ -174,3 +174,7 @@ let g:gitgutter_max_signs = 1000 " disable after 1000 signs to be shown
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+" vim-airline
+" https://github.com/vim-airline/vim-airline
+let g:airline_symbols_ascii = 1 " use plain ascii symbols

@@ -186,3 +186,7 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 " gen_tags.vim
 " https://github.com/jsfaint/gen_tags.vim
 let g:gen_tags#gtags_default_map = 1
+
+" vim-airline
+" https://github.com/vim-airline/vim-airline
+let g:airline_symbols_ascii = 1 " use plain ascii symbols

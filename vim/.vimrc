@@ -178,3 +178,4 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 " vim-airline
 " https://github.com/vim-airline/vim-airline
 let g:airline_symbols_ascii = 1 " use plain ascii symbols
+let g:airline_extensions = [] " don't enable any plugin on the statusline by default

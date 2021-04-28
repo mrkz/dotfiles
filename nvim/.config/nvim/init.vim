@@ -36,6 +36,9 @@ Plug 'jsfaint/gen_tags.vim'
 """"    statusline
 Plug 'vim-airline/vim-airline'
 
+""""    Rust
+Plug 'rust-lang/rust.vim'
+
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
@@ -92,6 +95,9 @@ silent! colorscheme molokai " silent ! ignores error if not installed
 " show trailing whitespaces in ugly red
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
+
+" set groovy syntax for all files named 'jenkinsfile'
+au BufNewFile,BufRead Jenkinsfile setf groovy
 
 
 """"
@@ -191,3 +197,7 @@ let g:gen_tags#gtags_default_map = 1
 " https://github.com/vim-airline/vim-airline
 let g:airline_symbols_ascii = 1 " use plain ascii symbols
 let g:airline_extensions = [] " don't enable any plugin on the statusline by default
+
+" rust.vim
+"
+let g:rustfmt_autosave = 1

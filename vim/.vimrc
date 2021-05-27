@@ -10,6 +10,10 @@ Plug 'tomasr/molokai'
 
 
 """" Plugins
+
+""""    surround vim motion
+Plug 'tpope/vim-surround'
+
 """"    navigation (code/tree)
 Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTree'] }
 Plug 'majutsushi/tagbar', { 'on': ['TagbarToggle'] }
@@ -35,6 +39,7 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'thomasfaingnaert/vim-lsp-snippets'
 Plug 'thomasfaingnaert/vim-lsp-ultisnips'
+
 
 """"    statusline
 Plug 'vim-airline/vim-airline'
@@ -191,6 +196,10 @@ let g:gitgutter_max_signs = 1000 " disable after 1000 signs to be shown
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+" gen_tags.vim
+" https://github.com/jsfaint/gen_tags.vim
+let g:gen_tags#gtags_default_map = 1
 
 " vim-airline
 " https://github.com/vim-airline/vim-airline

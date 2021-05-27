@@ -10,6 +10,10 @@ Plug 'tomasr/molokai'
 
 
 """" Plugins
+
+""""    surround vim motion
+Plug 'tpope/vim-surround'
+
 """"    navigation (code/tree)
 Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTree'] }
 Plug 'majutsushi/tagbar', { 'on': ['TagbarToggle'] }

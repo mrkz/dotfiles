@@ -13,6 +13,8 @@ Plug 'tomasr/molokai'
 
 """"    surround vim motion
 Plug 'tpope/vim-surround'
+""""    repeat on steroids
+Plug 'tpope/vim-repeat'
 
 """"    navigation (code/tree)
 Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTree'] }

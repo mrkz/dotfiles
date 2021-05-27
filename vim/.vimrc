@@ -21,12 +21,17 @@ Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 
 """"    git stuff
 Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+
 """"    IDE-like behavior
 Plug 'Shougo/neocomplete.vim'
 Plug 'vim-syntastic/syntastic'
 """"    snippets support
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+
+""""    code navigation plugins
+Plug 'jsfaint/gen_tags.vim'
 
 """"    statusline
 Plug 'vim-airline/vim-airline'
@@ -46,6 +51,7 @@ set ruler
 set number
 set cursorline
 filetype plugin indent on
+syntax on
 
 """" Line number setup
 """"    set line number hybrid
@@ -121,6 +127,8 @@ let g:go_highlight_fields = 1
 let g:go_highlight_types = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
+"don't complain on older nvim installs
+let g:go_version_warning = 0
 
 " syntastic
 " https://github.com/vim-syntastic/syntastic
@@ -180,6 +188,10 @@ let g:gitgutter_max_signs = 1000 " disable after 1000 signs to be shown
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+" gen_tags.vim
+" https://github.com/jsfaint/gen_tags.vim
+let g:gen_tags#gtags_default_map = 1
 
 " vim-airline
 " https://github.com/vim-airline/vim-airline

@@ -25,10 +25,16 @@ Plug 'tpope/vim-fugitive'
 
 """"    IDE-like behavior
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'mattn/vim-lsp-settings'
 Plug 'vim-syntastic/syntastic'
+""""    language server protocol
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
 """"    snippets support
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+Plug 'thomasfaingnaert/vim-lsp-snippets'
+Plug 'thomasfaingnaert/vim-lsp-ultisnips'
 
 """"    code navigation plugins
 Plug 'jsfaint/gen_tags.vim'

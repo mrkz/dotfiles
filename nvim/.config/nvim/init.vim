@@ -187,9 +187,9 @@ let g:tagbar_type_go = {
 let g:gitgutter_max_signs = 1000 " disable after 1000 signs to be shown
 
 " ultisnips (snippets)
-"let g:UltiSnipsExpandTrigger="<tab>"
-"let g:UltiSnipsJumpForwardTrigger="<tab>"
-"let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 " vim-airline
 " https://github.com/vim-airline/vim-airline
@@ -207,8 +207,8 @@ let g:completion_enable_snippet = 'UltiSnips'
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 " use <Tab> as trigger keys
-imap <Tab> <Plug>(completion_smart_tab)
-imap <S-Tab> <Plug>(completion_smart_s_tab)
+"imap <Tab> <Plug>(completion_smart_tab)
+"imap <S-Tab> <Plug>(completion_smart_s_tab)
 " Set completeopt to have a better completion experience
 set completeopt=menuone,noinsert,noselect
 " Avoid showing message extra message when using completion

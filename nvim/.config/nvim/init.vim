@@ -102,6 +102,9 @@ silent! colorscheme molokai " silent ! ignores error if not installed
 " show trailing whitespaces in ugly red
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
+" Transparent background for termguicolors
+highlight Normal guibg=none
+highlight NonText guibg=none
 
 " set groovy syntax for all files named 'jenkinsfile'
 au BufNewFile,BufRead Jenkinsfile setf groovy

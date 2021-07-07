@@ -56,6 +56,7 @@ set background=dark
 set ruler
 set number
 set cursorline
+set termguicolors
 filetype plugin indent on
 syntax on
 

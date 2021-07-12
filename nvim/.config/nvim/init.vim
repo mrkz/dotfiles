@@ -266,5 +266,5 @@ autocmd CursorMoved,InsertLeave,BufEnter,BufWinEnter,TabEnter,BufWritePost *
 \ lua require'lsp_extensions'.inlay_hints{ prefix = '', highlight = "Comment", enabled = {"TypeHint", "ChainingHint", "ParameterHint"} }
 
 " :Terminal will open terminal in a new horizontal split below current buffer
-command! -nargs=* -bang -complete=file Terminal belowright split +terminal<bang> <args>
+command! -nargs=* -bang -complete=file Terminal belowright 20%split +terminal<bang> <args>
 

@@ -32,7 +32,7 @@ function install_stow() {
     __install_pkg stow
 }
 
-function install_univewsal_ctags() {
+function install_universal_ctags() {
     # skip install if the right ctags is installed
     command -v ctags > /dev/null 2>&1 && ctags --version | grep -qs '^Universal Ctags' && return
     distro=$(grep ^ID= /usr/lib/os-release | cut -d= -f2)

@@ -9,6 +9,11 @@ if [ -f /usr/bin/go ]; then
     export PATH="$GOBIN:$PATH"
 fi
 
+# rust related exports
+if [ -f ${HOME}/.cargo/env ]; then
+    export PATH="${HOME}/.cargo/bin:$PATH"
+fi
+
 # export proxy vars if available
 if [ -f ${HOME}/.shrc/.proxies ]; then
     source ${HOME}/.shrc/.proxies

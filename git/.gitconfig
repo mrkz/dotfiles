@@ -22,3 +22,44 @@
 
 #[url "git@gitlab.com:"]
 #        insteadOf = https://gitlab.com
+
+# Delta configuration
+# delta is a diff viewer with syntax coloring, see
+# https://github.com/dandavison/delta for more information
+#
+# Disabled by default, otherwise git will segfault
+[pager]
+#    diff = delta
+#    show = delta
+
+[delta]
+    features = custom-styles custom-colors line-number-colors
+    syntax-theme = Monokai Extended
+
+[delta "custom-styles"]
+    commit-decoration-style = bold yellow ul box
+    file-style = bold white box
+    file-decoration-style = none
+    hunk-header-decoration-style = none
+    hunk-header-style = line-number omit
+
+[delta "custom-colors"]
+    plus-style = "syntax #343B23"
+    plus-emph-style = "syntax #455425"
+    minus-style = "syntax #473832"
+    minus-emph-style = "syntax #6C4A44"
+
+[delta "line-number-colors"]
+    line-numbers = true
+    line-numbers-minus-style = "#CA1959"
+    line-numbers-zero-style = "#D0D0D0"
+    line-numbers-plus-style = "#678E19"
+    line-numbers-left-format = "{nm:>4}┊"
+    line-numbers-right-format = "{np:>4}│"
+    line-numbers-left-style = blue
+    line-numbers-right-style = blue
+
+[interactive]
+    diffFilter = delta --color-only
+
+# END Delta configuration

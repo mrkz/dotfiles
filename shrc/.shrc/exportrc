@@ -1,6 +1,8 @@
 export EDITOR=vim
 export LANG=en_US.UTF-8
 export PAGER=less
+# force truecolor
+export COLORTERM=truecolor
 
 # go related exports
 if [ -f /usr/bin/go ]; then

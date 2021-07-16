@@ -7,11 +7,14 @@ for more information about handling your dotfiles using stow, read
 [this](http://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html)
 blog.
 
+Additionally, the `setup.sh` as is runs several install commands to setup several stuff
+like tmux, zsh, git repositories, rust + tooling, etc.
+
 ## usage
 simply run the `setup.sh` script.
 **note**: You may want to review the script and the dotfiles before
 executing the script as they may touch sensible files
-(~/.bashrc, ~/.zshrc, ~/.ssh among others).
+(~/.bashrc, ~/.zshrc, ~/.ssh among others) and install a bunch of stuff from repositories + wild Internet.
 
 ```
 $ ./setup.sh

@@ -32,6 +32,26 @@ function install_stow() {
     __install_pkg stow
 }
 
+function install_clangd() {
+    # skip install if clangd is installed
+    command -v clangd > /dev/null 2>&1 && return
+    distro=$(grep ^ID= /usr/lib/os-release | cut -d= -f2)
+    pkgname="clang-tools-extra" # pkgname for fedora
+    case $distro in
+        fedora)
+            ;;
+        raspbian)
+            pkgname=clangd-11
+            ;;
+        *)
+            echo >&2 "Error: could not install clangd for ${distro}"
+            exit 1;;
+    esac
+    __install_pkg ${pkgname}
+    unset pkgname
+    unset distro
+}
+
 function install_universal_ctags() {
     # skip install if the right ctags is installed
     command -v ctags > /dev/null 2>&1 && ctags --version | grep -qs '^Universal Ctags' && return

@@ -33,8 +33,12 @@ function install_stow() {
 }
 
 function install_rust_analyzer() {
+    # skip install if clangd is installed
+    command -v rust-analyzer > /dev/null 2>&1 && return
     command -v rustup >/dev/null 2>&1 || { echo >&2 "Install rustup (rust) to continue"; exit 1; }
     rustup +nightly component add rust-analyzer-preview
+    # create a symlink to it to a discoverable directory in $PATH
+    ln -s ${HOME}/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/bin/rust-analyzer ${HOME}/.cargo/bin/rust-analyzer
 }
 
 function install_clangd() {

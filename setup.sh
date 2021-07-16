@@ -1,7 +1,7 @@
 #!/bin/sh
 
 managed=(bash zsh git shrc tmux nvim vim)
-install_list=(stow zsh tmux universal-ctags nvim ohmyzsh rust clangd git-delta bat)
+install_list=(stow zsh tmux universal-ctags nvim ohmyzsh rust rust-analyzer clangd git-delta bat)
 plug_vim_url=https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 nvim_plugfile=$HOME/.local/share/nvim/site/autoload/plug.vim
 

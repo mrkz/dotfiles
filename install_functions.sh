@@ -32,6 +32,11 @@ function install_stow() {
     __install_pkg stow
 }
 
+function install_rust_analyzer() {
+    command -v rustup >/dev/null 2>&1 || { echo >&2 "Install rustup (rust) to continue"; exit 1; }
+    rustup +nightly component add rust-analyzer-preview
+}
+
 function install_clangd() {
     # skip install if clangd is installed
     command -v clangd > /dev/null 2>&1 && return

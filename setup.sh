@@ -5,6 +5,16 @@ install_list=(stow zsh tmux universal-ctags nvim ohmyzsh rust rust-analyzer clan
 plug_vim_url=https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 nvim_plugfile=$HOME/.local/share/nvim/site/autoload/plug.vim
 
+# to update ./dconf/gnome-terminal-profiles.dconf run
+# dconf dump /org/gnome/terminal/legacy/profiles:/ > ${HOME}/git/dotfiles/dconf/gnome-terminal-profiles.dconf
+function setup_gnome_terminal_colors() {
+    command -v dconf >/dev/null 2>&1 || { echo >&2 "missing dconf binary"; exit 1; }
+    if [ "${XDG_CURRENT_DESKTOP}x" != "GNOMEx" ]; then
+        return
+    fi
+    dconf load /org/gnome/terminal/legacy/profiles:/ < ./dconf/gnome-terminal-profiles.dconf
+}
+
 function install_deps () {
     source ./install_functions.sh
     for element in ${install_list[@]}; do
@@ -27,6 +37,7 @@ function main() {
 
 install_deps
 main
+setup_gnome_terminal_colors
 
 unset element
 unset install_list

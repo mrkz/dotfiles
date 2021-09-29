@@ -35,7 +35,10 @@ Plug 'vim-syntastic/syntastic'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/lsp_extensions.nvim'
 """"    snippets support
-Plug 'nvim-lua/completion-nvim'
+"Plug 'nvim-lua/completion-nvim'
+" Temporary replacement for completion-nvim until the branch is merged:
+" https://github.com/nvim-lua/completion-nvim/pull/400
+Plug 'rafaelsq/completion-nvim', { 'branch': 'changeHandlerSignature' }
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 

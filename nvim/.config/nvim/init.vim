@@ -305,7 +305,7 @@ nnoremap <silent> gW    <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
 nnoremap <silent> gd    <cmd>lua vim.lsp.buf.declaration()<CR>
 " Set updatetime for CursorHold
 " 300ms of no cursor movement to trigger CursorHold
-set updatetime=300
+set updatetime=2000
 " Show diagnostic popup on cursor hold
 autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()
 

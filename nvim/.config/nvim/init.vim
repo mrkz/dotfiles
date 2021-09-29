@@ -31,6 +31,8 @@ Plug 'tpope/vim-fugitive'
 
 """"    IDE-like behavior
 Plug 'vim-syntastic/syntastic'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
 """"    language server protocol
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/lsp_extensions.nvim'
@@ -283,6 +285,16 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     update_in_insert = true,
   }
 )
+
+-- configure tree-sitter syntax highlighting
+require'nvim-treesitter.configs'.setup {
+  highlight = {
+    enable = true,
+    custom_captures = {
+    },
+    additional_vim_regex_highlighting = false,
+  },
+}
 EOF
 
 " Code navigation shortcuts

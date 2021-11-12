@@ -1,0 +1,5 @@
+require('plugins')
+require('theme')
+require('plugins.airline')
+require('plugins.gitgutter')
+require('mappings')

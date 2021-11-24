@@ -29,9 +29,11 @@ require("packer").startup({
     -- on steroids
     --   surround
     use({"tpope/vim-surround",
+	opt = true
     })
     --   repeat
     use({"tpope/vim-repeat",
+	opt = true
     })
     -- IDE look 'n feel
     --   file tree viewer

@@ -74,6 +74,11 @@ require("packer").startup({
 	 ft = {"go"},
     	 run = ":GoInstallBinaries"
     })
+    -- rust
+    use({"rust-lang/rust.vim",
+    	 opt = true,
+	 ft = {"rust"}
+    })
 
   end
 })

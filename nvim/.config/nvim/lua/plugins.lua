@@ -39,7 +39,8 @@ require("packer").startup({
     --   file tree viewer
     use({"preservim/nerdtree",
          opt = true,
-	 cmd = {"NERDTreeToggle", "NERDTree"}
+	 cmd = {"NERDTreeToggle", "NERDTree"},
+         config = [[require("plugins.nerdtree")]]
     })
     --   view buffer functions/definitions
     use({"majutsushi/tagbar",
@@ -49,19 +50,21 @@ require("packer").startup({
     -- markdown syntax
     use({"plasticboy/vim-markdown",
          opt = true,
-	 ft = {"markdown"}
+	 ft = {"markdown"},
+         config = [[require("plugins.vim-markdown")]]
     })
     -- git
     --   +++/--- column of changes
-    use({"airblade/vim-gitgutter"})
+    use({"airblade/vim-gitgutter", config = [[require("plugins.gitgutter")]]})
     --   cmdline
     use({"tpope/vim-fugitive"})
     -- statusline
-    use({"vim-airline/vim-airline"})
+    use({"vim-airline/vim-airline", config = [[require("plugins.airline")]]})
     -- snippets
     use({"SirVer/ultisnips",
          opt = true,
 	 ft = {"cpp", "c", "python", "go", "rust", "lua"},
+         config = [[require("plugins.ultisnips")]],
 	 requires = {{"honza/vim-snippets", opt = true}}
     })
     -- TreeSiter
@@ -72,12 +75,14 @@ require("packer").startup({
     use({"fatih/vim-go",
     	 opt = true,
 	 ft = {"go"},
-    	 run = ":GoInstallBinaries"
+    	 run = ":GoInstallBinaries",
+         config = [[require("plugins.vim-go")]]
     })
     -- rust
     use({"rust-lang/rust.vim",
     	 opt = true,
-	 ft = {"rust"}
+	 ft = {"rust"},
+         config = [[require("plugins.rust_vim")]]
     })
 
   end

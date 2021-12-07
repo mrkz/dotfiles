@@ -15,6 +15,10 @@ cmd([[ match ExtraWhitespace /\s\+$/ ]])
 -- Transparent background for termguicolors
 cmd([[ highlight Normal guibg=none ]])
 cmd([[ highlight NonText guibg=none ]])
+-- syntax enable
+cmd([[syntax enable]])
+-- indent on
+cmd([[filetype plugin indent on]])
 -- unset relative number on insert mode
 -- but use both number and relative number on normal mode
 -- so it's easier to move around

@@ -60,7 +60,7 @@ require("packer").startup({
     use({"tpope/vim-fugitive"})
     -- statusline
     use({"nvim-lualine/lualine.nvim",
-         requires = {{"arkav/lualine-lsp-progress", opt = true}},
+         requires = {{"arkav/lualine-lsp-progress"}},
          config = [[require("plugins.lualine")]]
     })
     -- snippets

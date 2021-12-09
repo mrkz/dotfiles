@@ -59,7 +59,10 @@ require("packer").startup({
     --   cmdline
     use({"tpope/vim-fugitive"})
     -- statusline
-    use({"vim-airline/vim-airline", config = [[require("plugins.airline")]]})
+    use({"nvim-lualine/lualine.nvim",
+         requires = {{"arkav/lualine-lsp-progress", opt = true}},
+         config = [[require("plugins.lualine")]]
+    })
     -- snippets
     use({"SirVer/ultisnips",
          opt = true,

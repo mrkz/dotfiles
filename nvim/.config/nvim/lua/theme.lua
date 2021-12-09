@@ -8,7 +8,7 @@ set.number = true
 set.relativenumber = true
 set.colorcolumn="80"
 -- theme
-cmd([[colorscheme monokai_soda]])
+require('monokai').setup{ palette = require('monokai').soda }
 -- show trailing whitespaces in ugly red
 cmd([[ highlight ExtraWhitespace ctermbg=red guibg=red ]])
 cmd([[ match ExtraWhitespace /\s\+$/ ]])

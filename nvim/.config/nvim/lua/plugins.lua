@@ -37,6 +37,8 @@ require("packer").startup({
     use({"wbthomason/packer.nvim",
          opt = true
     })
+    -- faster filetype loading
+    use({"nathom/filetype.nvim", config = [[require("plugins.filetype_nvim")]] })
     -- colorscheme
     use({"tanvirtin/monokai.nvim"})
     -- on steroids

@@ -116,6 +116,11 @@ require("packer").startup({
          config = [[require("plugins.vim-go")]]
     })
     -- rust
+    use({"simrat39/rust-tools.nvim",
+        opt = true,
+        after = "nvim-lspconfig",
+        config = [[require("plugins.rust_tools")]]
+    })
     use({"rust-lang/rust.vim",
     	 opt = true,
 	 ft = {"rust"},

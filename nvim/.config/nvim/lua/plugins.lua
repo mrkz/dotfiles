@@ -85,7 +85,26 @@ require("packer").startup({
     })
     -- TreeSiter
     use({"nvim-treesitter/nvim-treesitter",
-	 run = ":TSUpdate"
+         run = ":TSUpdate",
+         config = [[require("plugins.treesitter")]]
+    })
+    --   autocompletion engine
+    use({"hrsh7th/nvim-cmp",
+         opt = true,
+         ft = {"cpp", "c", "python", "go", "rust", "lua"},
+         requires = {
+             -- LSP autocompletion
+             {"hrsh7th/cmp-nvim-lsp"},
+             -- snippets on autocomplete menu
+             {"quangnguyen30192/cmp-nvim-ultisnips", opt = true, after = "ultisnips", config = [[require("plugins.nvim_cmp")]]}
+         }
+    })
+    -- LSP
+    --   some default configurations for built-in LSP client
+    use({"neovim/nvim-lspconfig",
+         opt = true,
+         after = "cmp-nvim-lsp",
+	 config = [[require("plugins.nvim_lspconfig")]]
     })
     -- golang
     use({"fatih/vim-go",
@@ -100,6 +119,5 @@ require("packer").startup({
 	 ft = {"rust"},
          config = [[require("plugins.rust_vim")]]
     })
-
   end
 })

@@ -1,3 +1,4 @@
+require('packer_compiled')
 -- disable runtime plugins
 vim.g.did_load_filetypes = 1
 vim.g.loaded_matchit = 1
@@ -33,6 +34,8 @@ vim.cmd [[packadd packer.nvim]]
 --
 require("packer").startup({
   function(use)
+    -- speedup lua modules startup
+    use({"lewis6991/impatient.nvim", rocks = 'mpack'})
     -- packer
     use({"wbthomason/packer.nvim",
          opt = true
@@ -126,5 +129,9 @@ require("packer").startup({
 	 ft = {"rust"},
          config = [[require("plugins.rust_vim")]]
     })
-  end
+  end,
+    config = {
+    -- Move to lua dir so impatient.nvim can cache it
+    compile_path = vim.fn.stdpath('config')..'/lua/packer_compiled.lua'
+  }
 })

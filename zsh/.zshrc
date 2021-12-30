@@ -12,7 +12,7 @@ ZSH_THEME=terminalparty
 
 if [ -d ${OH_MY_ZSH_REPO} ]; then
     export ZSH=${OH_MY_ZSH_REPO}
-    plugins=( git vi-mode rust cargo docker docker-compose)
+    plugins=( git vi-mode rust docker docker-compose)
     . ${ZSH}/oh-my-zsh.sh
     # if vi-mode plugin is enabled, then let's be explicit
     # about the mode we're currently on the prompt for the

@@ -40,6 +40,8 @@ require("packer").startup({
     use({"wbthomason/packer.nvim",
          opt = true
     })
+    -- to profile startup time of nvim
+    use({"tweekmonster/startuptime.vim"})
     -- faster filetype loading
     use({"nathom/filetype.nvim", config = [[require("plugins.filetype_nvim")]] })
     -- colorscheme

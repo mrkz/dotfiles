@@ -34,6 +34,11 @@ for _, lsp in ipairs(servers) do
     }
 end
 
+-- enable golang server but don't use the mappings
+nvim_lsp['gopls'].setup {
+    capabilities = capabilities,
+}
+
 -- enable lua language server
 local runtime_path = vim.split(package.path, ';')
 table.insert(runtime_path, 'lua/?.lua')

@@ -34,9 +34,24 @@ for _, lsp in ipairs(servers) do
     }
 end
 
--- enable golang server but don't use the mappings
+-- enable golang server but don't use the standard mappings
 nvim_lsp['gopls'].setup {
     capabilities = capabilities,
+    on_attach = function (_,bufnr)
+        vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+
+        local opts = {noremap = true, silent = true}
+        vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+        vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gD', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+        vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<cmd>GoDefType<CR>', opts)
+        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<C-k>', '<cmd>GoInfo<CR>', opts)
+        vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+        -- code actions, fix imports, minor edits needed, etc
+        vim.api.nvim_buf_set_keymap(bufnr, 'n', 'ga', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+        -- diagnostics, jump to next/prev diagnostic warning/error
+        vim.api.nvim_buf_set_keymap(bufnr, 'n', 'g[', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
+        vim.api.nvim_buf_set_keymap(bufnr, 'n', 'g]', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
+    end
 }
 
 -- enable lua language server

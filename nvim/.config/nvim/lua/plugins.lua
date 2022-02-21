@@ -131,6 +131,12 @@ require("packer").startup({
 	 ft = {"rust"},
          config = [[require("plugins.rust_vim")]]
     })
+    -- Telescope fuzzy finder
+    use({
+        'nvim-telescope/telescope.nvim',
+        requires = {{'nvim-lua/plenary.nvim'}},
+        config = [[require("plugins.telescope")]]
+    })
   end,
     config = {
     -- Move to lua dir so impatient.nvim can cache it

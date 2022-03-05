@@ -12,6 +12,7 @@ vim.api.nvim_set_keymap('n', '<Leader>?', [[<cmd>lua require('telescope.builtin'
 require('telescope').setup{
     defaults = {
         layout_strategy = 'vertical',
-        layout_config = { width = 0.95, height = 0.95 }
+        layout_config = { width = 0.95, height = 0.95 },
+        file_ignore_patterns = { "^vendor/" }
     },
 }

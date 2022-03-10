@@ -1,5 +1,5 @@
-require('plugins')
 require('theme')
+require('plugins')
 require('mappings')
 require('commands')
 require('tabs')

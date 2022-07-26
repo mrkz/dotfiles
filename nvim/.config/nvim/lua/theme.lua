@@ -2,6 +2,7 @@ local set = vim.o
 local cmd = vim.cmd
 local nvim_cmd = vim.api.nvim_command
 -- global options
+set.mouse = "" -- disable mouse entirely
 set.termguicolors = true
 set.cursorline = true
 set.number = true

@@ -63,3 +63,5 @@
     diffFilter = delta --color-only
 
 # END Delta configuration
+[init]
+	defaultBranch = main

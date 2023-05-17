@@ -43,7 +43,7 @@ require("packer").startup({
     -- to profile startup time of nvim
     use({"tweekmonster/startuptime.vim"})
     -- faster filetype loading
-    use({"nathom/filetype.nvim", config = [[require("plugins.filetype_nvim")]] })
+    --use({"nathom/filetype.nvim", config = [[require("plugins.filetype_nvim")]] })
     -- colorscheme
     use({"tanvirtin/monokai.nvim"})
     -- on steroids
@@ -77,7 +77,9 @@ require("packer").startup({
     --   +++/--- column of changes
     use({"airblade/vim-gitgutter", config = [[require("plugins.gitgutter")]]})
     --   cmdline
-    use({"tpope/vim-fugitive"})
+    use({"tpope/vim-fugitive",
+         requires = {{"tpope/vim-rhubarb"}},
+    })
     -- statusline
     use({"nvim-lualine/lualine.nvim",
          requires = {{"arkav/lualine-lsp-progress"}},
@@ -137,6 +139,8 @@ require("packer").startup({
         requires = {{'nvim-lua/plenary.nvim'}},
         config = [[require("plugins.telescope")]]
     })
+    -- github markdown
+    use({'yasuhiroki/github-actions-yaml.vim'})
   end,
     config = {
     -- Move to lua dir so impatient.nvim can cache it

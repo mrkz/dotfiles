@@ -9,10 +9,28 @@ vim.api.nvim_set_keymap('n', '<Leader>gb', [[<cmd>lua require('telescope.builtin
 vim.api.nvim_set_keymap('n', '<Leader>?', [[<cmd>lua require('telescope.builtin').keymaps()<cr>]], { noremap = true, silent = true })
 
 -- configurations
-require('telescope').setup{
+local telescope = require("telescope")
+local telescopeConfig = require("telescope.config")
+
+-- clone default telescope configuration
+local vimgrep_arguments = { unpack(telescopeConfig.values.vimgrep_arguments) }
+
+-- search in hidden dot files
+table.insert(vimgrep_arguments, "--hidden")
+-- but skip .git directory
+table.insert(vimgrep_arguments, "--glob")
+table.insert(vimgrep_arguments, "!.git/*")
+
+telescope.setup{
     defaults = {
         layout_strategy = 'vertical',
         layout_config = { width = 0.95, height = 0.95 },
-        file_ignore_patterns = { "^vendor/" }
+        file_ignore_patterns = { "^vendor/" },
+        vimgrep_arguments = vimgrep_arguments,
     },
+    pickers = {
+        find_files = {
+            find_command = {"rg", "--files", "--hidden", "--glob", "!.git/*" },
+        }
+    }
 }

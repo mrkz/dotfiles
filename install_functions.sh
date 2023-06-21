@@ -8,6 +8,8 @@ function __install_pkg() {
             PKG_MANAGER=dnf;;
         raspbian)
             PKG_MANAGER=apt;;
+        ubuntu)
+            PKG_MANAGER=apt;;
         *)
             echo >&2 "Error: could not install curl for ${distro}"
             exit 1;;
@@ -52,6 +54,9 @@ function install_clangd() {
         raspbian)
             pkgname=clangd-11
             ;;
+        ubuntu)
+            pkgname=clangd-11
+            ;;
         *)
             echo >&2 "Error: could not install clangd for ${distro}"
             exit 1;;
@@ -69,6 +74,8 @@ function install_universal_ctags() {
         fedora)
             sudo -E dnf copr enable jgoguen/universal-ctags;;
         raspbian)
+            ;;
+        ubuntu)
             ;;
         *)
             echo >&2 "Error: could not install universal-ctags for ${distro}"
@@ -88,6 +95,9 @@ function install_nvim() {
             __install_pkg neovim;;
         raspbian)
             echo "Still Unsupported!";;
+        ubuntu)
+            pkgname=neovim
+            ;;
         *)
             echo >&2 "Error: could not install neovim for ${distro}"
             exit 1;;

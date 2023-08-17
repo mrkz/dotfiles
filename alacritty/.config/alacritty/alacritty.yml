@@ -1,0 +1,59 @@
+# SHELL
+shell:
+  program: /bin/zsh
+
+# WINDOW
+dimensions:
+  columns: 80
+  lines: 24
+# FONTS
+font:
+  normal:
+    family: Terminus
+    style: Bold
+
+  bold:
+    family: Terminus
+    style: Bold
+
+  italic:
+    family: Terminess Nerd Font Mono
+    style: Bold Italic
+
+  bold_italic:
+    family: Terminess Nerd Font Mono
+    style: Bold Italic
+
+  size: 12
+
+# THEME (colors)
+window:
+  decorations: None
+  opacity: 0.92
+colors:
+  # Default colors
+  primary:
+    background: '0x1C1C1C'
+    foreground: '0xD0D0D0'
+
+  # Normal colors
+  normal:
+    black:   '0x1c1c1c'
+    red:     '0xF92672'
+    green:   '0xA6E22E'
+    yellow:  '0xFD971F'
+    blue:    '0x66D9EF'
+    magenta: '0xAE81FF'
+    cyan:    '0x5FD7FF'
+    white:   '0xD0D0D0'
+
+  # Bright colors
+  bright:
+    black:   '0x303030'
+    red:     '0xF92672'
+    green:   '0xA6E22E'
+    yellow:  '0xFD971F'
+    blue:    '0x66D9EF'
+    magenta: '0xAE81FF'
+    cyan:    '0x5FD7FF'
+    white:   '0xFFFFFF'

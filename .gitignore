@@ -7,3 +7,5 @@ nvim/.config/nvim/lua/packer_compiled.lua
 nvim/.config/nvim/spell
 # CLR related
 shrc/.shrc/clr.sh
+# proxy stuff
+shrc/.shrc/proxyrc

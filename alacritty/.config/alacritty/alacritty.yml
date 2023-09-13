@@ -17,12 +17,12 @@ font:
     style: Bold
 
   italic:
-    family: Terminess Nerd Font Mono
-    style: Bold Italic
+    family: Terminus
+    style: Bold
 
   bold_italic:
-    family: Terminess Nerd Font Mono
-    style: Bold Italic
+    family: Terminus
+    style: Bold
 
   size: 12
 

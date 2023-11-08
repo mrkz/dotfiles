@@ -1,0 +1,5 @@
+define hook-next
+  refresh
+end
+
+layout split

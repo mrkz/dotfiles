@@ -1,11 +1,15 @@
 -- custom mappings
+-- see pickers https://github.com/nvim-telescope/telescope.nvim#pickers
+--
+-- list/find files in current working directory (respecting .gitignore)
 vim.api.nvim_set_keymap('n', '<Leader>ff', [[<cmd>lua require('telescope.builtin').find_files()<cr>]], { noremap = true, silent = true })
+-- live grep in current working directory (respecting .gitignore)
 vim.api.nvim_set_keymap('n', '<Leader>fg', [[<cmd>lua require('telescope.builtin').live_grep()<cr>]], { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<Leader>fb', [[<cmd>lua require('telescope.builtin').buffers()<cr>]], { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<Leader>fm', [[<cmd>lua require('telescope.builtin').man_pages()<cr>]], { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<Leader>gc', [[<cmd>lua require('telescope.builtin').git_commits()<cr>]], { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<Leader>gc', [[<cmd>lua require('telescope.builtin').git_commits()<cr>]], { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<Leader>gb', [[<cmd>lua require('telescope.builtin').git_bcommits()<cr>]], { noremap = true, silent = true })
+-- live grep in current buffer
+vim.api.nvim_set_keymap('n', '<Leader>g', [[<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<cr>]], { noremap = true, silent = true })
+-- handy man pages
+vim.api.nvim_set_keymap('n', '<Leader>m', [[<cmd>lua require('telescope.builtin').man_pages()<cr>]], { noremap = true, silent = true })
+-- list current nvim mappings
 vim.api.nvim_set_keymap('n', '<Leader>?', [[<cmd>lua require('telescope.builtin').keymaps()<cr>]], { noremap = true, silent = true })
 
 -- configurations

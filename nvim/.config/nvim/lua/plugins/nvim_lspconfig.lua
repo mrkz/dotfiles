@@ -1,6 +1,6 @@
 local nvim_lsp = require 'lspconfig'
 local on_attach = function(_,bufnr)
-    vim.api.nvim_buf_set_option(bufnr,'omnifunc', 'v:lua.vim.lsp.omnifunc')
+    vim.bo[bufnr].omnifunc = "v:lua.vim.lsp.omnifunc"
 
     local opts = { noremap = true, silent = true }
     vim.api.nvim_buf_set_keymap(bufnr, 'n', '<C-]>', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
@@ -39,7 +39,7 @@ end
 nvim_lsp['gopls'].setup {
     capabilities = capabilities,
     on_attach = function (_,bufnr)
-        vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+	vim.bo[bufnr].omnifunc = "v:lua.vim.lsp.omnifunc"
 
         local opts = {noremap = true, silent = true}
         vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
